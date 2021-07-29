@@ -26,6 +26,7 @@ gem 'jbuilder', '~> 2.7'
 # gem 'image_processing', '~> 1.2'
 
 # Reduces boot times through caching; required in config/boot.rb
+gem 'haml', '5.2.0'
 gem 'bootsnap', '>= 1.4.2', require: false
 
 group :development, :test do
@@ -36,6 +37,7 @@ group :development, :test do
 
   gem 'rspec', '3.9.0', platforms: [:mri, :mingw, :x64_mingw]
 end
+
 group :development do
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
   gem 'web-console', '>= 3.3.0'
