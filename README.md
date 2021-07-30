@@ -13,10 +13,15 @@ $ rails new automated_tests
 +  Create a remote repository on GitHub
 
 git init
+
 git add README.md
+
 git commit -m "first commit"
+
 git branch -M main
+
 git remote add origin https://github.com/*******/automated_tests.git
+
 git push -u origin main
 
 + Install RSpec
@@ -47,3 +52,18 @@ $ rails g model Word value language
 
 $ rake db:migrate
 
++ First test for our new model Using shoulda-matchers
+
+$ gem 'shoulda-matchers', '5.0.0'
+
+$ gem install shoulda-matchers
+
+Rails apps
+If you're working on a Rails app, simply place this at the bottom of spec/rails_helper.rb (or in a support file if you so choose):
+
+Shoulda::Matchers.configure do |config|
+  config.integrate do |with|
+    with.test_framework :rspec
+    with.library :rails
+  end
+end
