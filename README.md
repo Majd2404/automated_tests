@@ -30,6 +30,8 @@ $ gem install rspec -v 3.9.0
 
 $ bundle exec rspec
 
+If you like to use Haml:
+
 + Install Haml
 gem 'haml', '5.2.0'
 
@@ -38,3 +40,10 @@ $ gem install haml -v 5.2.0
 + Converting all .erb views to haml format
 
 $ rake haml:erb2haml
+
++ Create Word model
+
+$ rails g model Word value language
+
+$ rake db:migrate
+
