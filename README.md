@@ -24,20 +24,24 @@ git remote add origin https://github.com/*******/automated_tests.git
 
 git push -u origin main
 
-+ Install RSpec
++ Install RSpec (rspec-rails 5.x for Rails 6.x)
+
 group :development, :test do
 
-  gem 'rspec', '3.9.0', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'rspec-rails', '5.0.0', platforms: [:mri, :mingw, :x64_mingw]
+
 end
 
-$ gem install rspec -v 3.9.0
+$ gem install rspec-rails -v 5.0.0
 
+$ rails generate rspec:install
 
 $ bundle exec rspec
 
 If you like to use Haml:
 
 + Install Haml
+
 gem 'haml', '5.2.0'
 
 $ gem install haml -v 5.2.0
@@ -52,13 +56,16 @@ $ rails g model Word value language
 
 $ rake db:migrate
 
-+ First test for our new model Using shoulda-matchers
++ First test for our new model Using shoulda-matchers:
+
+https://github.com/thoughtbot/shoulda-matchers
 
 $ gem 'shoulda-matchers', '5.0.0'
 
 $ gem install shoulda-matchers
 
-Rails apps
+
++ Rails apps
 If you're working on a Rails app, simply place this at the bottom of spec/rails_helper.rb (or in a support file if you so choose):
 
 Shoulda::Matchers.configure do |config|
@@ -67,3 +74,26 @@ Shoulda::Matchers.configure do |config|
     with.library :rails
   end
 end
+
++ https://github.com/thoughtbot/shoulda-matchers/blob/master/lib/shoulda/matchers/active_record/have_db_column_matcher.rb
+
+/word_spec.rb
+
+require 'rails_helper'
+
+RSpec.describe Word, type: :model do
+    describe 'columns' do
+        it { is_expected.to have_db_column(:value) }
+        it { is_expected.to have_db_column(:language) }
+    end
+end
+
+$ rails db:migrate RAILS_ENV=test
+$ bundle exec rspec
+
+Output:
+
+..
+
+Finished in 0.72477 seconds (files took 3.5 seconds to load)
+2 examples, 0 failures
