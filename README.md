@@ -97,3 +97,9 @@ Output:
 
 Finished in 0.72477 seconds (files took 3.5 seconds to load)
 2 examples, 0 failures
+
++ Change the database from SQLite to PostgreSQL
+
+gem 'pg', '1.2.3'
+
+$ gem install pg -v 1.2.3
