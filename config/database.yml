@@ -2,15 +2,17 @@ default: &default
   adapter: postgresql
   encoding: unicode
   pool: 5
+  port: 5432
 
 development:
   <<: *default
   database: project_development_2021
+  port: 5432
 
 test:
   <<: *default
   database: project_test_2021
-
+  port: 5432
 production:
   <<: *default
   database: project_production
