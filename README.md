@@ -107,3 +107,5 @@ $ gem install pg -v 1.2.3
 + Create words_controller.rb
 
 $ rails g controller Words
+
++ Write a spec for WordsController

@@ -2,17 +2,27 @@ default: &default
   adapter: postgresql
   encoding: unicode
   pool: 5
-  port: 5432
+  port: 5433
+  host: localhost
+  username: 
+  password: 
 
 development:
   <<: *default
   database: project_development_2021
-  port: 5432
+  port: 5433
+  host: localhost
+  username: 
+  password: 
 
 test:
   <<: *default
   database: project_test_2021
-  port: 5432
+  port: 5433
+  host: localhost  
+  username: 
+  password: 
+    
 production:
   <<: *default
   database: project_production
