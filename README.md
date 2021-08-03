@@ -32,11 +32,11 @@ group :development, :test do
 
 end
 
-$ gem install rspec-rails -v 5.0.0
+    $ gem install rspec-rails -v 5.0.0
 
-$ rails generate rspec:install
+    $ rails generate rspec:install
 
-$ bundle exec rspec
+    $ bundle exec rspec
 
 If you like to use Haml:
 
@@ -44,7 +44,7 @@ If you like to use Haml:
 
 gem 'haml', '5.2.0'
 
-$ gem install haml -v 5.2.0
+    $ gem install haml -v 5.2.0
 
 + Converting all .erb views to haml format
 
@@ -52,17 +52,17 @@ $ rake haml:erb2haml
 
 + Create Word model
 
-$ rails g model Word value language
+    $ rails g model Word value language
 
-$ rake db:migrate
+    $ rake db:migrate
 
 + First test for our new model Using shoulda-matchers:
 
 https://github.com/thoughtbot/shoulda-matchers
 
-$ gem 'shoulda-matchers', '5.0.0'
+    $ gem 'shoulda-matchers', '5.0.0'
 
-$ gem install shoulda-matchers
+    $ gem install shoulda-matchers
 
 
 + Rails apps
@@ -88,8 +88,8 @@ RSpec.describe Word, type: :model do
     end
 end
 
-$ rails db:migrate RAILS_ENV=test
-$ bundle exec rspec
+    $ rails db:migrate RAILS_ENV=test
+    $ bundle exec rspec
 
 Output:
 
@@ -102,11 +102,11 @@ Finished in 0.72477 seconds (files took 3.5 seconds to load)
 
 gem 'pg', '1.2.3'
 
-$ gem install pg -v 1.2.3
+    $ gem install pg -v 1.2.3
 
 + Create words_controller.rb
 
-$ rails g controller Words
+    $ rails g controller Words
 
 + Write a spec for WordsController
 
