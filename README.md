@@ -109,3 +109,5 @@ $ gem install pg -v 1.2.3
 $ rails g controller Words
 
 + Write a spec for WordsController
+
++ Add validation of presence for value and language in Word model
