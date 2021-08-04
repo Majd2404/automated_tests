@@ -2,27 +2,24 @@ require 'rails_helper'
 
 RSpec.describe WordsController, type: :controller do
     describe 'GET index' do
+        before { get :index}
+          context 'when some words present' do
+               let!(:word) { create (:word)}
+               it 'assigns @words' do
+                    expect(assigns(:words)).to eq ([word])
+               end
 
-    context 'when some words present' do
-       it 'assigns @words' do
-            word = Word.create 
-            get :index 
-            expect(assigns(:words)).to eq ([word])
-       end
-    end
-    
-    context 'when no words' do
-        it 'assigns @words' do
-             word = Word.create 
-             get :index 
-             expect(assigns(:words)).to eq ([])
-        end
-    end
-       it 'renders the index template' do
-            get :index
-            expect(response).to render_template(:index)
-       end
-
-
-    end
+               it 'renders the index template' do
+                    expect(response).to render_template(:index)
+               end
+               
+          end
+          
+          context 'when no words' do
+               it 'assigns @words' do
+                    expect(assigns(:words)).to eq ([])
+               end
+          end
+          
+     end
 end

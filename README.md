@@ -8,21 +8,21 @@ Rails tests can also simulate browser requests and thus you can test your applic
 
 + Create rails app
 
-$ rails new automated_tests
+    $ rails new automated_tests
 
 +  Create a remote repository on GitHub
 
-git init
+    $ git init
 
-git add README.md
+    $ git add README.md
 
-git commit -m "first commit"
+    $ git commit -m "first commit"
 
-git branch -M main
+    $ git branch -M main
 
-git remote add origin https://github.com/*******/automated_tests.git
+    $ git remote add origin https://github.com/*******/automated_tests.git
 
-git push -u origin main
+    $ git push -u origin main
 
 + Install RSpec (rspec-rails 5.x for Rails 6.x)
 
@@ -48,7 +48,7 @@ gem 'haml', '5.2.0'
 
 + Converting all .erb views to haml format
 
-$ rake haml:erb2haml
+    $ rake haml:erb2haml
 
 + Create Word model
 
@@ -111,3 +111,21 @@ gem 'pg', '1.2.3'
 + Write a spec for WordsController
 
 + Add validation of presence for value and language in Word model
+
++ Install factory_bot gem
+
+    $ gem 'factory_bot', '6.2.0'
+
+    $ gem install factory_bot
+
++ Configure your test suite
+
+  RSpec
+    If you're using Rails, add the following configuration to spec/support/factory_bot.rb and be sure to require that file in rails_helper.rb:
+
+    RSpec.configure do |config|
+      config.include FactoryBot::Syntax::Methods
+    end
+
+
+    

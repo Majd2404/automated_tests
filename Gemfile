@@ -30,6 +30,9 @@ gem 'jbuilder', '~> 2.7'
 gem 'haml', '5.2.0'
 gem 'bootsnap', '>= 1.4.2', require: false
 
+#factory_bot provides a framework and DSL for defining and using factories - less error-prone, more explicit, and all-around easier to work with than fixtures
+gem 'factory_bot', '6.2.0'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
