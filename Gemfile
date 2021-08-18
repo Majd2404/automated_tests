@@ -32,6 +32,8 @@ gem 'bootsnap', '>= 1.4.2', require: false
 
 #factory_bot provides a framework and DSL for defining and using factories - less error-prone, more explicit, and all-around easier to work with than fixtures
 gem 'factory_bot', '6.2.0'
+# Flexible authentication solution for Rails with Warden
+gem 'devise', '4.8.0'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

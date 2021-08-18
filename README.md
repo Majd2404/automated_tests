@@ -129,7 +129,27 @@ Finished in 0.72477 seconds (files took 3.5 seconds to load)
       config.include FactoryBot::Syntax::Methods
     end
 
++ Implement authentication with devise gem:
+
+    + Install Devise gem
+
+        gem 'devise', '4.8.0'
+
+            $ gem install devise
+
+    + run the generator
+
+            $ rails generate devise:install
+
+    + set up the default URL options for the Devise mailer in each environment. Here is a possible
+      configuration for config/environments/development.rb:              
     
+        config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+
+        
+ 
+ 
+
 
 
     
